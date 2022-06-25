@@ -274,7 +274,7 @@ function App() {
                         <>
                             <h2 className='title'>Mint</h2>
                             {!publicMintActive && <p className='text'>Congrats! You have been selected to mint.</p>}
-
+                            {publicMintActive && <p className='text'>Supply: {totalSupply} / {maxTotalSupply}</p>}
                             {blockchain.account && <p className='yellow-text'>Wallet Address - ${truncateText(blockchain.account)}</p> }
                             <div className="mint-content">
                                 <div className="mint-input">
