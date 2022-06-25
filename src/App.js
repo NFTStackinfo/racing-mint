@@ -139,7 +139,7 @@ function App() {
         }
         if(blockchain.errorMsg === metamaskError && !(isIOS || isAndroid)) {
           //TODO change to main
-            window.location.replace('https://metamask.app.link/dapp/racing-social-club.netlify.com/')
+            window.location.replace('https://metamask.app.link/dapp/racing-mint.netlify.app/')
         }
     }, [blockchain.errorMsg])
 
@@ -151,7 +151,7 @@ function App() {
         ) {
           window.location.replace(
               //TODO change to main
-              "https://metamask.app.link/dapp/racing-social-club.netlify.com/"
+              "https://metamask.app.link/dapp/racing-mint.netlify.app/"
           )
         }
       }
