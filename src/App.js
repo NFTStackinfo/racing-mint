@@ -367,8 +367,8 @@ function App() {
             <section>
                 <div className="content">
                     <Countdown
-                        // date={'2022-07-24T12:35:55'}
-                        date={1656075505000}
+                        date={'2022-06-24T12:35:55'}
+                        // date={1656511200000}
                         renderer={renderer}
                     />
                 </div>
