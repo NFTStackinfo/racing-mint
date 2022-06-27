@@ -68,7 +68,7 @@ export const connect = (register = true) => {
                     method: "net_version",
                 });
                 //const NetworkData = await SmartContract.networks[networkId];
-                if (networkId === '4' || networkId === 4) {
+                if (networkId === '1' || networkId === 1) {
                     const address = "0xfcf91cd08f80f19c58cd4d938d1e1f7d8dcf8e03";
                     const account = accounts[0];
 
