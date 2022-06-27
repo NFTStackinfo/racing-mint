@@ -334,8 +334,8 @@ function App() {
                 ) : (
                     <>
                         <h2>REGISTER FOR RAFFLE</h2>
-                        <p className='text'>The registration is free and registering is only available with metamask wallet. <br/> Registration period ends in {days} days {hours} hours {minutes} minutes {seconds} seconds.</p>
-                        <p className='yellow-text'>You need to have 0.18 ETH + gas fee to participate in Raffle.</p>
+                        <p className='text'>The registration is free and registering is only available with a metamask wallet. <br/> Registration period ends in {days} days {hours} hours {minutes} minutes {seconds} seconds.</p>
+                        <p className='yellow-text'>You need to have at least 0.18 ETH + gas fee to participate in raffle.</p>
                         <Button
                             as='button'
                             withIcon={false}
