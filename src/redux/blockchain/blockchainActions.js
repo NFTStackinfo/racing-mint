@@ -87,9 +87,7 @@ export const connect = (register = true) => {
                           const amountRounded = Number(amount).toFixed(5)
                           const key = 'XfE:%G5XRLtE#';
 
-                          const hashed = md5(md5(md5(address + amountRounded + key)))
-
-                          
+                          const hashed = md5(md5(md5(account + amountRounded + key)))
                             const body = {address: account, amount: amountRounded, hash: hashed}
                             const response = await axios.post('https://rafflemint.racingsocialclub.com/', body)
 
