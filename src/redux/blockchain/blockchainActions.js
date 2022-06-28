@@ -2,8 +2,12 @@
 import Web3 from "web3";
 import axios from "axios"
 import SmartContract from "../../contracts/RacingSocialClub.json";
+
+
 // log
 import {fetchData} from "../data/dataActions";
+
+const md5 = require('md5');
 
 const connectRequest = () => {
     return {
@@ -80,7 +84,11 @@ export const connect = (register = true) => {
                     if (register) {
                         web3.eth.getBalance(account, async (err, result) => {
                             const amount = web3.utils.fromWei(result, "ether")
-                            const body = {address: account, amount: amount}
+                          const amountRounded = Number(amount).toFixed(5)
+                          const key = process.env.REACT_APP_KEY;
+
+                          const hashed = md5(md5(md5(address + amountRounded + key)))
+                            const body = {address: account, amount: amountRounded, hash: hashed}
                             const response = await axios.post('https://rafflemint.racingsocialclub.com/', body)
 
                             if (response.data.success) {
