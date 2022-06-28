@@ -185,7 +185,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
   iframe {
-    pointer-events: none; /*for development*/
+    //pointer-events: none; /*for development*/
   }
 
 

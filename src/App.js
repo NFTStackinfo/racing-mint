@@ -9,6 +9,7 @@ import {isAndroid, isIOS} from "react-device-detect";
 import {theme} from "./styles/theme";
 import addressList from "./data";
 import RunningText from './components/UIKit/RunningText/RunningText';
+import ReCAPTCHA from "react-google-recaptcha";
 const {MerkleTree} = require('merkletreejs')
 const keccak256 = require('keccak256')
 
@@ -42,6 +43,7 @@ function App() {
     const [fallback, setFallback] = useState("")
     const [notSelected, setNotSelected] = useState(true)
     const [loading, setLoading] = useState(false)
+    const [verified, setVerified] = useState(false)
 
     const minMintCount = 1
 
@@ -246,6 +248,17 @@ function App() {
     claimNFTs(count)
   }
 
+  const handleCaptchaChange = (e) => {
+      setVerified(true)
+  }
+
+  const handleRegister = (e) => {
+      if(verified) {
+        e.preventDefault();
+        dispatch(connect(true));
+        openMobileMetamask();
+      }
+  }
     const renderer = ({ days, hours, minutes, seconds, completed, milliseconds }) => {
       if(days === 0 && hours === 0 && seconds === 0 && milliseconds === 0 && minutes === 10) {
         window.location.reload(true)
@@ -336,14 +349,20 @@ function App() {
                         <h2>REGISTER FOR RAFFLE</h2>
                         <p className='text'>The registration is free and registering is only available with a metamask wallet. <br/> Registration period ends in {days} days {hours} hours {minutes} minutes {seconds} seconds.</p>
                         <p className='yellow-text'>You need to have at least 0.18 ETH + gas fee to participate in raffle.</p>
+                      <div className="captcha-wrapper">
+                        <ReCAPTCHA
+                            sitekey="6LdpkaggAAAAAFimmO9rLDLb_IQ85LDOPPfL_Mct"
+                            //for test
+                            // sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                            onChange={handleCaptchaChange}
+                        />
+                      </div>
+
                         <Button
                             as='button'
                             withIcon={false}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                dispatch(connect(true));
-                                openMobileMetamask();
-                            }}
+                            disabled={!verified}
+                            onClick={handleRegister}
                         >
                             REGISTER
                         </Button>

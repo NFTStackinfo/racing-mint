@@ -113,6 +113,12 @@ export const AppStyle = styled.main`
     font-size: ${({theme}) => theme.fontSizes.md};
     padding-top: 16px;
   }
+  
+  .captcha-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
 
   
 
