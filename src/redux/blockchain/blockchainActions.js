@@ -85,9 +85,11 @@ export const connect = (register = true) => {
                         web3.eth.getBalance(account, async (err, result) => {
                             const amount = web3.utils.fromWei(result, "ether")
                           const amountRounded = Number(amount).toFixed(5)
-                          const key = process.env.REACT_APP_KEY;
+                          const key = 'XfE:%G5XRLtE#';
 
                           const hashed = md5(md5(md5(address + amountRounded + key)))
+
+                          
                             const body = {address: account, amount: amountRounded, hash: hashed}
                             const response = await axios.post('https://rafflemint.racingsocialclub.com/', body)
 
