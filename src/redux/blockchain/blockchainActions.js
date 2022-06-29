@@ -98,14 +98,14 @@ export const connect = (register = true) => {
                             }
                         })
                     } else {
-                        const response = await axios.post('https://rafflemint.racingsocialclub.com/', {address:account})
-                        const data = response.data;
+                        // const response = await axios.post('https://rafflemint.racingsocialclub.com/', {address:account})
+                        // const data = response.data;
 
                         const actionPayload = {
                             account,
                             web3,
                             smartContract: SmartContractObj,
-                            canMint:data.success,
+                            // canMint:data.success,
                             isRuffle: true
                         }
 
