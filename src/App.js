@@ -129,7 +129,7 @@ function App() {
         const account = await blockchain.account;
 
         //uncomment this for seeing root in console
-        // console.table([localRoot, root]);
+        console.table([localRoot, root]);
 
         if (root === localRoot && addressList.includes(account) ||
             publicMintActive) {
@@ -391,8 +391,8 @@ function App() {
     if (completed) {
       {/*2 countdown*/}
       return <Countdown
-          // date={'2022-06-24T12:35:55'}
-          date={1656518400000}
+          date={'2022-06-24T12:35:55'}
+          // date={1656518400000}
           renderer={secondCountdown}
       />;
     } else {
