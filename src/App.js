@@ -46,7 +46,6 @@ function App() {
   const [notSelected, setNotSelected] = useState(true);
   const [loading, setLoading] = useState(false);
   const [verified, setVerified] = useState(false);
-  const [closeRegister, setCloseRegister] = useState(false);
 
   const minMintCount = 1;
 
